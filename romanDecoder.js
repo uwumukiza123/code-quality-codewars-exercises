@@ -1,5 +1,5 @@
 function romamNumeralDecoder(roman){
-    let romanNumbers = {
+    const romanNumbers = {
       M: 1000,
       D: 500,
       C: 100,
@@ -9,15 +9,15 @@ function romamNumeralDecoder(roman){
       I: 1
     }
     
-    let array = roman.split('');
+    let arrayOfRomans = roman.split('');
     let sum = 0;
     
     for (let i=0; i<array.length; i++){   
-      if(romanNumbers[array[i]] < romanNumbers[array[i+1]]){        
-        sum += (romanNumbers[array[i+1]] - romanNumbers[array[i]]);  
+      if(romanNumbers[arrayOfRomans[i]] < romanNumbers[arrayOfRomans[i+1]]){        
+        sum += (romanNumbers[arrayOfRomans[i+1]] - romanNumbers[arrayOfRomans[i]]);  
         i++;
       }else{
-        sum += romanNumbers[array[i]];                           
+        sum += romanNumbers[arrayOfRomans[i]];                           
       }
     }
     return sum;
